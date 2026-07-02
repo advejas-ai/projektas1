@@ -14,7 +14,7 @@ var cooldown_time_left: float = 0.0
 var dash_direction: Vector2 = Vector2.ZERO
 var last_move_dir: Vector2 = Vector2.DOWN
 
-@onready var sprite: ColorRect = $Sprite
+@onready var sprite: Sprite2D = $Sprite
 
 func _ready() -> void:
 	add_to_group("player")
@@ -56,10 +56,10 @@ func _start_dash(input_dir: Vector2) -> void:
 	is_dashing = true
 	dash_time_left = dash_duration
 	dash_direction = input_dir if input_dir != Vector2.ZERO else last_move_dir
-	sprite.color = Color(1.0, 0.4, 0.2, 1)
+	sprite.modulate = Color(1.0, 0.4, 0.2, 1)
 
 func _end_dash() -> void:
 	is_dashing = false
 	cooldown_time_left = dash_cooldown
 	velocity = dash_direction * max_speed * 0.5
-	sprite.color = Color(0.3, 0.7, 0.9, 1)
+	sprite.modulate = Color(0.3, 0.7, 0.9, 1)
