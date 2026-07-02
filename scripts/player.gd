@@ -62,8 +62,4 @@ func _end_dash() -> void:
 	is_dashing = false
 	cooldown_time_left = dash_cooldown
 	velocity = dash_direction * max_speed * 0.5
-<<<<<<< HEAD
-	sprite.modulate = Color(1.0, 1.0, 1.0, 1)
-=======
 	sprite.modulate = Color(1, 1, 1, 1)
->>>>>>> c67f2a41b5e2bc3d8426412f9a49137b79162169
